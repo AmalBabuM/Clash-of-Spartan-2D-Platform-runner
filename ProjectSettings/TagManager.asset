@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Eatable
   - Trap
+  - Flag
   layers:
   - Default
   - TransparentFX
@@ -45,4 +46,10 @@ TagManager:
     locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: back front
+    uniqueID: 12440721
+    locked: 0
+  - name: player
+    uniqueID: 4015557231
     locked: 0
