@@ -22,8 +22,17 @@ public class PlayerMovement : MonoBehaviour
     } 
     void Update()
     {
+        move = Input.GetAxisRaw("Horizontal");
         Jump();
-        Movement();
+        action();
+        /*Movement();*/
+    }
+    private void FixedUpdate()
+    {
+        
+        
+        /*Debug.Log(move);*/
+        rb.velocity = new Vector2(move * speed * Time.deltaTime, rb.velocity.y);
     }
     bool IsGrounded()
     {
@@ -42,14 +51,14 @@ public class PlayerMovement : MonoBehaviour
 
         }
     }
-    void Movement()
+   /* void Movement()
     {
 
         move = Input.GetAxisRaw("Horizontal");
         action();
-        /*Debug.Log(move);*/
+        *//*Debug.Log(move);*//*
         rb.velocity=new Vector2(move*speed*Time.deltaTime,rb.velocity.y);
-    }
+    }*/
 
     void action()
     {
