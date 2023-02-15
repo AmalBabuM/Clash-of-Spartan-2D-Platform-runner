@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
-{
+{   
+    
     Rigidbody2D rb;
     public float jumpForce = 15f;
     public float speed = 500f;
@@ -29,9 +30,6 @@ public class PlayerMovement : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        
-        
-        /*Debug.Log(move);*/
         rb.velocity = new Vector2(move * speed * Time.deltaTime, rb.velocity.y);
     }
     bool IsGrounded()
@@ -41,11 +39,8 @@ public class PlayerMovement : MonoBehaviour
 
     void Jump()
     {
-        /*Debug.Log("Hello");*/
-
         if (Input.GetKeyDown(KeyCode.Space) && IsGrounded())
         {
-            /*Debug.Log("HI");*/
             /*rb.velocity = Vector2.up * jumpForce;*/
             rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
 
