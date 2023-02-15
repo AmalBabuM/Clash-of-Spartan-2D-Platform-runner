@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -16,7 +17,12 @@ public class Win : MonoBehaviour
         if(collision.gameObject.tag=="Flag")
         {
             Debug.Log("Hi");
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            Invoke("NextLevel", 1f);
         }
+    }
+
+    private void NextLevel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }
