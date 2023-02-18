@@ -32,9 +32,14 @@ public class PlayerMovement : MonoBehaviour
     {
         rb.velocity = new Vector2(move * speed * Time.deltaTime, rb.velocity.y);
     }
-    bool IsGrounded()
+    bool IsGrounded() //This checks if the box collider is touching the ground by using the physics2D.BoxCast function
+                      //coll.bounds gets the center of our box collider, coll.bounds.size gets the size of the box collider
+                      //0f is for the rotation ie no rotation
+                      //Vector2.down moves the box slightly down 0.1f
+                      
     {
         return Physics2D.BoxCast(coll.bounds.center, coll.bounds.size, 0f, Vector2.down, 0.1f, groundLayer);
+        //this creates a box similiar to that of the box collider and checks if touches the groundLayer
     }
 
     void Jump()

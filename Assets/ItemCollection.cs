@@ -19,8 +19,9 @@ public class ItemCollection : MonoBehaviour
             sc.ScoreUpdate(score);
 
             Destroy(collision.gameObject);
+            /*Debug.Log("Heyyy");*/
 
-            Debug.Log(score);
+           /* Debug.Log(score);*/
         }
 
     }
