@@ -1,13 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static SaveSystem;
 
 public class ItemCollection : MonoBehaviour
 {
     ScoreBoard sc;
-    int score = 0;
+    static int score = 0;
+    SaveSystem saveSystem;
     private void Start()
-    {
+    {   
+        saveSystem= new SaveSystem();
         sc = GameObject.Find("GameManager").GetComponent<ScoreBoard>(); // we can do t his or directly assign making the variable public
     }
 
@@ -24,6 +27,19 @@ public class ItemCollection : MonoBehaviour
            /* Debug.Log(score);*/
         }
 
+    }
+    private void Update()
+    {
+        if (Input.GetKeyDown("l"))
+        {
+            Debug.Log("JJ");
+            SaveDataObject obj = saveSystem.LoadGame();
+
+            score = obj.score;
+
+            sc.ScoreUpdate(score);
+
+        }
     }
 
 }
