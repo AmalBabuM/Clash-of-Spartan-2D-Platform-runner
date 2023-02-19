@@ -13,7 +13,7 @@ public class PlayerMovement : MonoBehaviour
     SpriteRenderer icon;
     BoxCollider2D coll;
     public LayerMask groundLayer;
-    enum MovementState { idle, running, jump, fall}
+    enum MovementState { idle, running, jump, fall, attack}
     void Start()
     {
            rb= GetComponent<Rigidbody2D>();
@@ -44,7 +44,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Jump()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && IsGrounded())
+        if ((Input.GetKeyDown(KeyCode.W)||(Input.GetKeyDown(KeyCode.UpArrow))) && IsGrounded())
         {
             /*rb.velocity = Vector2.up * jumpForce;*/
             rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
@@ -91,6 +91,10 @@ public class PlayerMovement : MonoBehaviour
         {
             state = MovementState.fall;
 
+        }
+        if(Input.GetKeyDown(KeyCode.Space))
+        {
+            state= MovementState.attack;
         }
         anim.SetInteger("state",(int)state);
     }

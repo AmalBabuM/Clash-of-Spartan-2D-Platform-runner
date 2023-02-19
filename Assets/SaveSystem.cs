@@ -21,6 +21,7 @@ public class SaveSystem : MonoBehaviour
     }   
     public SaveDataObject LoadGame()
     {
+
         string jsonData=File.ReadAllText(Application.dataPath+saveFileName);
         SaveDataObject obj= JsonUtility.FromJson<SaveDataObject>(jsonData);
         return obj;
@@ -29,5 +30,7 @@ public class SaveSystem : MonoBehaviour
     public class SaveDataObject
     {
         public int score;
+        /*public float health;*/
+        /*public int scene;*/
     }
 }
