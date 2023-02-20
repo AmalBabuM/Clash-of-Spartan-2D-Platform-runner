@@ -7,6 +7,7 @@ TagManager:
   - Eatable
   - Trap
   - Flag
+  - Enemy
   layers:
   - Default
   - TransparentFX
