@@ -5,11 +5,14 @@ using UnityEngine.SceneManagement;
 
 public class Death : MonoBehaviour
 {
+
     Animator anim;
     Rigidbody2D rb;
     bool isDead = false;
+    HealthBar health;
     private void Start()
-    {
+    {   
+        health=FindObjectOfType<HealthBar>();
         rb= GetComponent<Rigidbody2D>();
         anim= GetComponent<Animator>();
     }
@@ -17,7 +20,8 @@ public class Death : MonoBehaviour
     {
         if(rb.transform.position.y < -3f && isDead==false)
         {
-            anim.SetTrigger("dead");
+            health.SetValue(0);
+            /*anim.SetTrigger("dead");*/
             isDead=true;
 
         }
@@ -26,7 +30,8 @@ public class Death : MonoBehaviour
     {
         if(collision.gameObject.tag=="Trap")
         {
-            anim.SetTrigger("dead");
+            health.SetValue(0);
+            /*anim.SetTrigger("dead");*/
             rb.bodyType = RigidbodyType2D.Static;
             
         }

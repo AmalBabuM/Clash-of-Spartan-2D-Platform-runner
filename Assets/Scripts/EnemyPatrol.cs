@@ -66,9 +66,9 @@ public class EnemyPatrol : MonoBehaviour
 
     }
 
-    public void damage()
+   /* public void damage()
     {
-       /* Debug.Log("Dead");*/
-    }
+       *//* Debug.Log("Dead");*//*
+    }*/
 
 }
