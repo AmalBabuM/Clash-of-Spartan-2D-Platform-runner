@@ -12,8 +12,7 @@ public class SaveSystem : MonoBehaviour
         SaveDataObject data = new SaveDataObject();
         data.score = score;
 
-        string jsonData= JsonUtility.ToJson(data);
-        /*Debug.Log(jsonData);*/
+        string jsonData = JsonUtility.ToJson(data);
         /*File.WriteAllText(Application.persistentDataPath + "/dangerfiles.json",jsonData);*/
         File.WriteAllText(Application.dataPath + saveFileName, jsonData);
         /*Debug.Log(Application.persistentDataPath);*/
@@ -30,7 +29,7 @@ public class SaveSystem : MonoBehaviour
     public class SaveDataObject
     {
         public int score;
-        /*public float health;*/
-        /*public int scene;*/
+        public float health;
+        public int scene;
     }
 }

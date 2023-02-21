@@ -5,22 +5,30 @@ using UnityEngine;
 
 public class ScoreBoard : MonoBehaviour
 {
-    public TextMeshProUGUI score;
-
+    public TextMeshProUGUI scoreValue;
+    public static int score = 0;
     SaveSystem saving;
     private void Start()
     {
         saving= new SaveSystem();
     }
 
-    public void ScoreUpdate(int point)
+    public void ScoreUpdate()
     {
+        score++;
         /*Debug.Log(point);*/
         /*Debug.Log(point.ToString());*/
-        score.text = "Score : " + point.ToString();
+        scoreValue.text = "Score : " + score.ToString();
 
-        saving.SaveData(point);
+        /*saving.SaveData(score);*/
 
+    }
+
+    public void ResumeGame(int value)
+    {
+        score = value;
+        Debug.Log(score);
+        scoreValue.text = "Score : " + score.ToString();
     }
    
 }

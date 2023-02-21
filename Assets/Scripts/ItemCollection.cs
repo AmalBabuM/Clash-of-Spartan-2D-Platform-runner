@@ -6,7 +6,7 @@ using static SaveSystem;
 public class ItemCollection : MonoBehaviour
 {
     ScoreBoard sc;
-    static int score = 0;
+    /*static int score = 0;*/
     SaveSystem saveSystem;
     private void Start()
     {   
@@ -18,8 +18,8 @@ public class ItemCollection : MonoBehaviour
     {
         if(collision.gameObject.tag=="Eatable")
         {
-            score++;
-            sc.ScoreUpdate(score);
+            /*score++;*/
+            sc.ScoreUpdate();
 
             Destroy(collision.gameObject);
             /*Debug.Log("Heyyy");*/
@@ -28,7 +28,7 @@ public class ItemCollection : MonoBehaviour
         }
 
     }
-    private void Update()
+    /*private void Update()
     {
         if (Input.GetKeyDown("l"))
         {
@@ -40,6 +40,6 @@ public class ItemCollection : MonoBehaviour
             sc.ScoreUpdate(score);
 
         }
-    }
+    }*/
 
 }

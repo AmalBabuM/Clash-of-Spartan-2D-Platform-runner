@@ -12,7 +12,7 @@ public class Loading : MonoBehaviour
     void Start()
     {
         saveSystem = new SaveSystem();
-        board = new ScoreBoard();
+        board =FindObjectOfType<ScoreBoard>();  
     }
 
     // Update is called once per frame
@@ -24,7 +24,7 @@ public class Loading : MonoBehaviour
             SaveDataObject obj = saveSystem.LoadGame();
 
             score = obj.score;
-            board.ScoreUpdate(score);
+            board.ResumeGame(score);
 
 
         }
