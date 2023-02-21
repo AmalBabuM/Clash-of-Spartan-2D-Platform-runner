@@ -20,7 +20,7 @@ public class ScoreBoard : MonoBehaviour
         /*Debug.Log(point.ToString());*/
         scoreValue.text = "Score : " + score.ToString();
 
-        /*saving.SaveData(score);*/
+        saving.SaveData(score);
 
     }
 
