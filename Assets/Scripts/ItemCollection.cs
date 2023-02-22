@@ -7,10 +7,10 @@ public class ItemCollection : MonoBehaviour
 {
     ScoreBoard sc;
     /*static int score = 0;*/
-    SaveSystem saveSystem;
+    /*SaveSystem saveSystem;*/
     private void Start()
     {   
-        saveSystem= new SaveSystem();
+        /*saveSystem= new SaveSystem();*/
         sc = GameObject.Find("GameManager").GetComponent<ScoreBoard>(); // we can do t his or directly assign making the variable public
     }
 

@@ -7,10 +7,10 @@ public class ScoreBoard : MonoBehaviour
 {
     public TextMeshProUGUI scoreValue;
     public static int score = 0;
-    SaveSystem saving;
+    /*1 SaveSystem saving;*/
     private void Start()
     {
-        saving= new SaveSystem();
+       /* 1 saving= new SaveSystem();*/
     }
 
     public void ScoreUpdate()
@@ -20,7 +20,7 @@ public class ScoreBoard : MonoBehaviour
         /*Debug.Log(point.ToString());*/
         scoreValue.text = "Score : " + score.ToString();
 
-        saving.SaveData(score);
+        /*1 saving.SaveData(score);*/
 
     }
 
