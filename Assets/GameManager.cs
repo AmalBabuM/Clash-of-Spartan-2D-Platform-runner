@@ -6,6 +6,11 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    Player player;
+    private void Start()
+    {
+        player=FindObjectOfType<Player>();
+    }
     public static GameManager Instance { get; private set; }
     void Awake()
     {
@@ -27,6 +32,10 @@ public class GameManager : MonoBehaviour
             PlayerData data = SaveSystem.LoadPlayer();
             
             SceneManager.LoadScene(data.scene);
+
+            player.LoadPlayer();
+
+
         }
     }
 }

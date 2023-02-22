@@ -53,7 +53,7 @@ public class Player : MonoBehaviour
         SaveSystem.SavePlayer(this);
     }
 
-    void LoadPlayer()
+    public void LoadPlayer()
     {
         PlayerData data = SaveSystem.LoadPlayer();
         Debug.Log("Hi all");
