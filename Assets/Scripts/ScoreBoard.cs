@@ -27,7 +27,7 @@ public class ScoreBoard : MonoBehaviour
 
     }
 
-    public void ResumeGame(int value)
+    public void LoadScore(int value)
     {
         score = value;
         Debug.Log(score);

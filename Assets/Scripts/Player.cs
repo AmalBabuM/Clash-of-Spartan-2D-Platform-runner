@@ -9,6 +9,15 @@ public class Player : MonoBehaviour
     public int score = 2;
     public int health = 10;
 
+    HealthBar healthBar;
+    ScoreBoard scoreBoard;
+    private void Start()
+    {
+        healthBar=FindObjectOfType<HealthBar>();
+        scoreBoard=FindObjectOfType<ScoreBoard>();
+        /*healthBar=FindObjectOfType<HealthBar>();*/
+    }
+
     private void Update()
     {
         if(Input.GetKeyDown(KeyCode.H))
@@ -16,7 +25,12 @@ public class Player : MonoBehaviour
         {
             scene=SceneManager.GetActiveScene().buildIndex;
 
-            Saveplayer();
+            SavePlayer();
+        }
+
+        if(Input.GetKeyDown(KeyCode.V))
+        {
+            LoadPlayer();
         }
     }
 
@@ -29,9 +43,18 @@ public class Player : MonoBehaviour
         health = value;
     }
    
-    void Saveplayer()
+    void SavePlayer()
     {
         Debug.Log("Hi");
         SaveSystem.SavePlayer(this);
+    }
+
+    void LoadPlayer()
+    {
+        PlayerData data = SaveSystem.LoadPlayer();
+        Debug.Log("Hi all");
+        healthBar.SetValue(data.health);
+        scoreBoard.LoadScore(data.score);
+
     }
 }

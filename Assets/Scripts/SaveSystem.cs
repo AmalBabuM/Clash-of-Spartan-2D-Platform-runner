@@ -19,7 +19,7 @@ public static class SaveSystem
     public static PlayerData LoadPlayer()
     {
         string jsonData = File.ReadAllText(Application.dataPath + saveFileName);
-        if(File.Exists(jsonData))
+        if (File.Exists(Application.dataPath+saveFileName))
         {
             PlayerData data = JsonUtility.FromJson<PlayerData>(jsonData);
             return data;

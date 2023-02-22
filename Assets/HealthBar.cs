@@ -35,4 +35,9 @@ public class HealthBar : MonoBehaviour
             anim.SetTrigger("dead");
         }
     }
+
+   /* public void LoadHealth(int health)
+    {
+
+    }*/
 }
