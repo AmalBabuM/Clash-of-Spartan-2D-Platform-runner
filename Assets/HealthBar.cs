@@ -8,8 +8,10 @@ public class HealthBar : MonoBehaviour
     Slider slider;
     int health;
     public Animator anim;
+    Player player;
     void Start()
     {
+        player=FindObjectOfType<Player>();
       slider=GetComponent<Slider>();
         health = 20;
         SetValue(health);
@@ -26,6 +28,7 @@ public class HealthBar : MonoBehaviour
 
     public void SetValue(int value)
     {
+        player.HealthUpdate(value);
         slider.value = value;
         if (value == 0)
         {

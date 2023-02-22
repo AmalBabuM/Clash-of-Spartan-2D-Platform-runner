@@ -19,6 +19,16 @@ public class Player : MonoBehaviour
             Saveplayer();
         }
     }
+
+    public void ScoreUpdate(int value)
+    {
+        score= value;
+    }
+    public void HealthUpdate(int value)
+    {
+        health = value;
+    }
+   
     void Saveplayer()
     {
         Debug.Log("Hi");
