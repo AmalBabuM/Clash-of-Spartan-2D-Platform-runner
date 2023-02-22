@@ -47,7 +47,7 @@ public class Player : MonoBehaviour
         health = value;
     }
    
-    void SavePlayer()
+    public void SavePlayer()
     {
         Debug.Log("Hi");
         SaveSystem.SavePlayer(this);
