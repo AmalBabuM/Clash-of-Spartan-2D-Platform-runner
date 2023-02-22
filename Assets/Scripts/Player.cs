@@ -49,6 +49,7 @@ public class Player : MonoBehaviour
    
     public void SavePlayer()
     {
+        scene = SceneManager.GetActiveScene().buildIndex;
         Debug.Log("Hi");
         SaveSystem.SavePlayer(this);
     }
@@ -56,6 +57,7 @@ public class Player : MonoBehaviour
     public void LoadPlayer()
     {
         PlayerData data = SaveSystem.LoadPlayer();
+        SceneManager.LoadScene(data.scene);
         Debug.Log("Hi all");
         healthBar.LoadHealth(data.health);
         scoreBoard.LoadScore(data.score);
