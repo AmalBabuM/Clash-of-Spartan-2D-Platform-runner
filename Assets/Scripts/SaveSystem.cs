@@ -29,7 +29,7 @@ public class SaveSystem : MonoBehaviour
     public class SaveDataObject
     {
         public int score;
-        public float health;
+        public int health;
         public int scene;
     }
 }
