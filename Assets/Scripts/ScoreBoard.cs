@@ -6,7 +6,7 @@ using UnityEngine;
 public class ScoreBoard : MonoBehaviour
 {
     public TextMeshProUGUI scoreValue;
-    public static int score = 0;
+    public int score = 0;
     Player player;
     /*1 SaveSystem saving;*/
     private void Start()
