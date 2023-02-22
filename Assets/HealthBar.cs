@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class HealthBar : MonoBehaviour
 {
     Slider slider;
-    int health;
+    static int health;
     public Animator anim;
     Player player;
     void Start()
@@ -36,8 +36,9 @@ public class HealthBar : MonoBehaviour
         }
     }
 
-   /* public void LoadHealth(int health)
+    public void LoadHealth(int value)
     {
-
-    }*/
+        health = value;
+        SetValue(health);
+    }
 }

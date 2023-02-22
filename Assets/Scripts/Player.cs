@@ -11,8 +11,11 @@ public class Player : MonoBehaviour
 
     HealthBar healthBar;
     ScoreBoard scoreBoard;
+
+    Rigidbody2D rb;
     private void Start()
     {
+        rb= GetComponent<Rigidbody2D>();
         healthBar=FindObjectOfType<HealthBar>();
         scoreBoard=FindObjectOfType<ScoreBoard>();
         /*healthBar=FindObjectOfType<HealthBar>();*/
@@ -53,8 +56,15 @@ public class Player : MonoBehaviour
     {
         PlayerData data = SaveSystem.LoadPlayer();
         Debug.Log("Hi all");
-        healthBar.SetValue(data.health);
+        healthBar.LoadHealth(data.health);
         scoreBoard.LoadScore(data.score);
+
+        Vector3 position;
+        position.x = data.position[0];
+        position.y = data.position[1];
+        position.z = data.position[2];
+
+        transform.position= position;
 
     }
 }
