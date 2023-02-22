@@ -5,9 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
-    public int scene = 1;
+    public int scene = 0;
     public int score = 2;
-    public int health = 10;
+    public int health = 20;
 
     HealthBar healthBar;
     ScoreBoard scoreBoard;
@@ -26,7 +26,8 @@ public class Player : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.H))
 
         {
-            scene=SceneManager.GetActiveScene().buildIndex;
+            scene = SceneManager.GetActiveScene().buildIndex;
+            Debug.Log("Current Scene No."+ scene);
 
             SavePlayer();
         }
