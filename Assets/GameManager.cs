@@ -29,13 +29,18 @@ public class GameManager : MonoBehaviour
     {
         if(Input.GetKeyDown("f"))
         {
-            PlayerData data = SaveSystem.LoadPlayer();
-
-            SceneManager.LoadScene(data.scene);
-
-            /*player.LoadPlayer();*/
-
-
+            ContinueGame();
         }
+    }
+
+    public void ContinueGame()
+    {
+        PlayerData data = SaveSystem.LoadPlayer();
+
+        SceneManager.LoadScene(data.scene);
+
+        /*player.LoadPlayer();*/
+
+
     }
 }
