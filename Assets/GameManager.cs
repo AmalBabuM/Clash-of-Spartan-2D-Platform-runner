@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     {
         player = FindObjectOfType<Player>();
     }
+    /*public static GameManager Instance { get; private set; }*/
     public static GameManager Instance { get; private set; }
     void Awake()
     {
@@ -33,6 +34,11 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void ResumeGame()
+    {
+        StartCoroutine( ContinueGame());
+    }
+
     public IEnumerator ContinueGame()
     {
         Debug.Log("JJJ");
@@ -42,7 +48,7 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(data.scene);
 
        
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(0.5f);
        /* player.LoadPlayer();
         player.LoadScene();
 */

@@ -13,7 +13,7 @@ public class HealthBar : MonoBehaviour
     {
         player=FindObjectOfType<Player>();
       slider=GetComponent<Slider>();
-        /*health = 20;*/
+        health = 20;
         SetValue(health);
     }
 

@@ -4,7 +4,7 @@ using UnityEngine;
 using static SaveSystem;
 
 public class Loading : MonoBehaviour
-{/*
+{
     public static Loading Instance { get; private set; }
     void Awake()
     {
@@ -17,5 +17,7 @@ public class Loading : MonoBehaviour
         {
             Destroy(gameObject);
         }
-    }*/
+    }
+
+   
 }

@@ -7,7 +7,7 @@ public class ScoreBoard : MonoBehaviour
 {
     /*public TextMeshProUGUI scoreValue;*/
     /*public */TextMeshProUGUI scoreValue;
-    public int score = 0;
+    public static int score;
     Player player;
     /*1 SaveSystem saving;*/
     private void Start()
