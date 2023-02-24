@@ -11,7 +11,8 @@ public class ItemCollection : MonoBehaviour
     private void Start()
     {   
         /*saveSystem= new SaveSystem();*/
-        sc = GameObject.Find("GameManager").GetComponent<ScoreBoard>(); // we can do t his or directly assign making the variable public
+       /* sc = GameObject.Find("GameManager").GetComponent<ScoreBoard>();*/ // we can do t his or directly assign making the variable public
+        sc= FindObjectOfType<ScoreBoard>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour
     Player player;
     private void Start()
     {
-        player=FindObjectOfType<Player>();
+        player = FindObjectOfType<Player>();
     }
     public static GameManager Instance { get; private set; }
     void Awake()
@@ -28,18 +28,28 @@ public class GameManager : MonoBehaviour
     private void Update()
     {
         if(Input.GetKeyDown("f"))
-        {
-            ContinueGame();
+        {   
+           StartCoroutine( ContinueGame());
         }
     }
 
-    public void ContinueGame()
+    public IEnumerator ContinueGame()
     {
+        Debug.Log("JJJ");
+        
         PlayerData data = SaveSystem.LoadPlayer();
 
         SceneManager.LoadScene(data.scene);
 
-        /*player.LoadPlayer();*/
+       
+        yield return new WaitForSeconds(5);
+       /* player.LoadPlayer();
+        player.LoadScene();
+*/
+        Debug.Log("fit");
+        player = FindObjectOfType<Player>();
+        /*yield return null;*/
+        player.LoadPlayer();
 
 
     }

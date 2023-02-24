@@ -53,11 +53,16 @@ public class Player : MonoBehaviour
         Debug.Log("Hi");
         SaveSystem.SavePlayer(this);
     }
+    public void LoadScene()
+    {
+        PlayerData data = SaveSystem.LoadPlayer();
+        SceneManager.LoadScene(data.scene);
+    }
 
     public void LoadPlayer()
     {
         PlayerData data = SaveSystem.LoadPlayer();
-        SceneManager.LoadScene(data.scene);
+        /*SceneManager.LoadScene(data.scene);*/
         Debug.Log("Hi all");
         healthBar.LoadHealth(data.health);
         scoreBoard.LoadScore(data.score);

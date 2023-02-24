@@ -6,14 +6,14 @@ using UnityEngine.UI;
 public class HealthBar : MonoBehaviour
 {
     Slider slider;
-    static int health;
+    static int health=20;
     public Animator anim;
     Player player;
     void Start()
     {
         player=FindObjectOfType<Player>();
       slider=GetComponent<Slider>();
-        health = 20;
+        /*health = 20;*/
         SetValue(health);
     }
 

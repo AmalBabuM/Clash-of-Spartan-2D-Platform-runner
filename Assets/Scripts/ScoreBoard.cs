@@ -5,13 +5,16 @@ using UnityEngine;
 
 public class ScoreBoard : MonoBehaviour
 {
-    public TextMeshProUGUI scoreValue;
+    /*public TextMeshProUGUI scoreValue;*/
+    /*public */TextMeshProUGUI scoreValue;
     public int score = 0;
     Player player;
     /*1 SaveSystem saving;*/
     private void Start()
     {   
+        scoreValue= GetComponent<TextMeshProUGUI>();
         player=FindObjectOfType<Player>();
+
        /* 1 saving= new SaveSystem();*/
     }
 
@@ -33,5 +36,5 @@ public class ScoreBoard : MonoBehaviour
         Debug.Log(score);
         scoreValue.text = "Score : " + score.ToString();
     }
-   
+
 }
