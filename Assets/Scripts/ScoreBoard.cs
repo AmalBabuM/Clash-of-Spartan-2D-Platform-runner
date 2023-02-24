@@ -14,8 +14,15 @@ public class ScoreBoard : MonoBehaviour
     {   
         scoreValue= GetComponent<TextMeshProUGUI>();
         player=FindObjectOfType<Player>();
+        StartDisplay(); 
+
 
        /* 1 saving= new SaveSystem();*/
+    }
+
+    public void StartDisplay()
+    {
+        scoreValue.text = "Score : " + score.ToString();
     }
 
     public void ScoreUpdate()
