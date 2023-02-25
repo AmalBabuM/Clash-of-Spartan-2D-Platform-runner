@@ -7,8 +7,10 @@ using UnityEngine.SceneManagement;
 public class Win : MonoBehaviour
 {
     Rigidbody rb;
+    ScoreBoard sc;
     private void Start()
     {
+        sc=FindObjectOfType<ScoreBoard>();
         rb= GetComponent<Rigidbody>();
 
     }
@@ -17,6 +19,8 @@ public class Win : MonoBehaviour
         if(collision.gameObject.tag=="Flag")
         {
             Debug.Log("Hi");
+            sc.FlagSave();
+
             Invoke("NextLevel", 1f);
         }
     }

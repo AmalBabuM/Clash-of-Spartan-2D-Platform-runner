@@ -38,7 +38,7 @@ public class Player : MonoBehaviour
         }
     }
 
-    public void ScoreUpdate(int value)
+    public void ScoreUpdate(int value) //This is where the score is updated
     {
         score= value;
     }
