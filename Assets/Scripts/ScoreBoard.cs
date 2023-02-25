@@ -10,13 +10,13 @@ public class ScoreBoard : MonoBehaviour
     /*public */TextMeshProUGUI scoreValue;
     public static int score;
     Player player;
-    int currentScore=0;
+    int currentScore;
     /*1 SaveSystem saving;*/
     private void Start()
     {   
         scoreValue= GetComponent<TextMeshProUGUI>();
         player=FindObjectOfType<Player>();
-        StartDisplay();
+        
 
         if(SceneManager.GetActiveScene().buildIndex==1)
         {
@@ -27,14 +27,15 @@ public class ScoreBoard : MonoBehaviour
             currentScore = PlayerPrefs.GetInt("Score", 0);
         }
         Debug.Log("restarted score : " + currentScore);
+        StartDisplay();
 
 
-       /* 1 saving= new SaveSystem();*/
+        /* 1 saving= new SaveSystem();*/
     }
 
     public void StartDisplay()
     {
-        scoreValue.text = "Score : " + score.ToString();
+        scoreValue.text = "Score : " + currentScore.ToString();
     }
 
     public void ScoreUpdate()
@@ -43,7 +44,7 @@ public class ScoreBoard : MonoBehaviour
         currentScore++;
         /*Debug.Log(point);*/
         /*Debug.Log(point.ToString());*/
-        scoreValue.text = "Score : " + score.ToString();
+        scoreValue.text = "Score : " + currentScore.ToString();
         player.ScoreUpdate(score);
 
         Debug.Log(currentScore);
