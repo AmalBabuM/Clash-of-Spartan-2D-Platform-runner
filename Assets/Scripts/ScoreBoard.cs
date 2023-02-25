@@ -45,7 +45,7 @@ public class ScoreBoard : MonoBehaviour
         /*Debug.Log(point);*/
         /*Debug.Log(point.ToString());*/
         scoreValue.text = "Score : " + currentScore.ToString();
-        player.ScoreUpdate(score);
+        player.ScoreUpdate(currentScore);
 
         Debug.Log(currentScore);
 
