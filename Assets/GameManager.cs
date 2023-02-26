@@ -51,7 +51,7 @@ public class GameManager : MonoBehaviour
         Debug.Log("456");
         yield return new WaitUntil(() => SceneManager.GetActiveScene().buildIndex == data.scene);
 
-        /*yield return new WaitUnit(() => SceneManager.GetActiveScene().buildIndex == 1);*/
+      /*yield return new WaitUntil(() => SceneManager.GetActiveScene().buildIndex == 1);*/
         /*yield return new WaitForSeconds(0.5f);*/
        /* player.LoadPlayer();
         player.LoadScene();
