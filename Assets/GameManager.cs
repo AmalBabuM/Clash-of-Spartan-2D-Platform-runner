@@ -43,14 +43,16 @@ public class GameManager : MonoBehaviour
     {
         Debug.Log("123");
 
-        /* PlayerData data = SaveSystem.LoadPlayer();
+        PlayerData data = SaveSystem.LoadPlayer();
 
-         SceneManager.LoadScene(data.scene);*/
-         player.LoadScene();
+        SceneManager.LoadScene(data.scene);
+        /*player.LoadScene();*/
 
         Debug.Log("456");
-        
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitUntil(() => SceneManager.GetActiveScene().buildIndex == data.scene);
+
+        /*yield return new WaitUnit(() => SceneManager.GetActiveScene().buildIndex == 1);*/
+        /*yield return new WaitForSeconds(0.5f);*/
        /* player.LoadPlayer();
         player.LoadScene();
 */
