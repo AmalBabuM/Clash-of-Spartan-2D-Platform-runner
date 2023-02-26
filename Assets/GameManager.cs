@@ -41,18 +41,20 @@ public class GameManager : MonoBehaviour
 
     public IEnumerator ContinueGame()
     {
-        Debug.Log("JJJ");
+        Debug.Log("123");
+
+        /* PlayerData data = SaveSystem.LoadPlayer();
+
+         SceneManager.LoadScene(data.scene);*/
+         player.LoadScene();
+
+        Debug.Log("456");
         
-        PlayerData data = SaveSystem.LoadPlayer();
-
-        SceneManager.LoadScene(data.scene);
-
-       
         yield return new WaitForSeconds(0.5f);
        /* player.LoadPlayer();
         player.LoadScene();
 */
-        Debug.Log("fit");
+        Debug.Log("789");
         player = FindObjectOfType<Player>();
         /*yield return null;*/
         player.LoadPlayer();

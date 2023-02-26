@@ -26,7 +26,7 @@ public class ScoreBoard : MonoBehaviour
         {
             currentScore = PlayerPrefs.GetInt("Score", 0);
         }
-        Debug.Log("restarted score : " + currentScore);
+       /* Debug.Log("restarted score : " + currentScore);*/
         StartDisplay();
 
 
@@ -47,7 +47,7 @@ public class ScoreBoard : MonoBehaviour
         scoreValue.text = "Score : " + currentScore.ToString();
         player.ScoreUpdate(currentScore);
 
-        Debug.Log(currentScore);
+        /*Debug.Log(currentScore);*/
 
         /*1 saving.SaveData(score);*/
 
@@ -62,7 +62,7 @@ public class ScoreBoard : MonoBehaviour
     public void LoadScore(int value)
     {
         score = value;
-        Debug.Log(score);
+        /*Debug.Log(score);*/
         scoreValue.text = "Score : " + score.ToString();
     }
 

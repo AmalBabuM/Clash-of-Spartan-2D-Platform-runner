@@ -63,7 +63,7 @@ public class Player : MonoBehaviour
     {
         PlayerData data = SaveSystem.LoadPlayer();
         /*SceneManager.LoadScene(data.scene);*/
-        Debug.Log("Hi all");
+       /* Debug.Log("Hi all");*/
         healthBar.LoadHealth(data.health);
         scoreBoard.LoadScore(data.score);
 
