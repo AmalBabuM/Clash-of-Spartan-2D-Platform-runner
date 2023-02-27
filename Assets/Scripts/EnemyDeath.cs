@@ -17,7 +17,7 @@ public class EnemyDeath : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player" && Input.GetKey(KeyCode.Space))
         {
-            audioManager.EnemyDeathSound();
+            audioManager.CoinCollect();
             /* Debug.Log("GHHHH");*/
             anim.SetTrigger("die");
         }

@@ -13,8 +13,9 @@ public class ScoreBoard : MonoBehaviour
     int currentScore;
     /*1 SaveSystem saving;*/
     private void Start()
-    {   
-        scoreValue= GetComponent<TextMeshProUGUI>();
+    {
+        Debug.Log(PlayerPrefs.GetInt("HighScore"));
+        scoreValue = GetComponent<TextMeshProUGUI>();
         player=FindObjectOfType<Player>();
         
 
@@ -56,6 +57,13 @@ public class ScoreBoard : MonoBehaviour
     public void FlagSave()
     {
         PlayerPrefs.SetInt("Score",currentScore);
+        PlayerPrefs.Save();
+        if (currentScore>PlayerPrefs.GetInt("HighScore"))
+        {
+            PlayerPrefs.SetInt("HighScore", currentScore);
+            PlayerPrefs.Save();
+            Debug.Log(PlayerPrefs.GetInt("HighScore"));
+        }
         Debug.Log("Saved Score : "+ currentScore);
     }
 
