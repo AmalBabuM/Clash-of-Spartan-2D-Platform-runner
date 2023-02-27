@@ -9,8 +9,10 @@ public class HealthBar : MonoBehaviour
     static int health=20;
     public Animator anim;
     Player player;
+    AudioManager audioManager;
     void Start()
     {
+        audioManager=FindObjectOfType<AudioManager>();
         player=FindObjectOfType<Player>();
         slider=GetComponent<Slider>();
         health = 20;
@@ -32,6 +34,7 @@ public class HealthBar : MonoBehaviour
         slider.value = value;
         if (value == 0)
         {
+            audioManager.DeathSound();
             anim.SetTrigger("dead");
         }
     }

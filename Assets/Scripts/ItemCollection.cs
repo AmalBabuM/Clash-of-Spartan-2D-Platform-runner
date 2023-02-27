@@ -6,10 +6,12 @@ using static SaveSystem;
 public class ItemCollection : MonoBehaviour
 {
     ScoreBoard sc;
+    AudioManager audioManager;
     /*static int score = 0;*/
     /*SaveSystem saveSystem;*/
     private void Start()
     {   
+        audioManager=FindObjectOfType<AudioManager>();
         /*saveSystem= new SaveSystem();*/
        /* sc = GameObject.Find("GameManager").GetComponent<ScoreBoard>();*/ // we can do t his or directly assign making the variable public
         sc= FindObjectOfType<ScoreBoard>();
@@ -19,6 +21,7 @@ public class ItemCollection : MonoBehaviour
     {
         if(collision.gameObject.tag=="Eatable")
         {
+            audioManager.CoinCollect();
             /*score++;*/
             sc.ScoreUpdate();
 

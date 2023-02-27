@@ -9,9 +9,11 @@ public class BossDeath : MonoBehaviour
     int health=3;
 
     public Slider slider;
+    AudioManager audioManager;
     // Start is called before the first frame update
     void Start()
     {
+        audioManager=FindObjectOfType<AudioManager>();
         /*slider= GetComponentInParent<Slider>();*/
         slider.value = health;
     }
@@ -32,6 +34,7 @@ public class BossDeath : MonoBehaviour
 
                 if (health == 0)
                 {
+                    audioManager.EnemyDeathSound();
                     anim.SetTrigger("die");
                 }
             }

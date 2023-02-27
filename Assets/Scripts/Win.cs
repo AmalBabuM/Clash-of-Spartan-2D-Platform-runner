@@ -8,8 +8,10 @@ public class Win : MonoBehaviour
 {
     Rigidbody rb;
     ScoreBoard sc;
+    AudioManager audioManager;
     private void Start()
     {
+        audioManager=FindObjectOfType<AudioManager>();
         sc=FindObjectOfType<ScoreBoard>();
         rb= GetComponent<Rigidbody>();
 
@@ -18,7 +20,8 @@ public class Win : MonoBehaviour
     {
         if(collision.gameObject.tag=="Flag")
         {
-            Debug.Log("Hi");
+            audioManager.NextLevel();
+            /*Debug.Log("Hi");*/
             sc.FlagSave();
 
             Invoke("NextLevel", 1f);

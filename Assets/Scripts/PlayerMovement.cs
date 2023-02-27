@@ -12,10 +12,12 @@ public class PlayerMovement : MonoBehaviour
     Animator anim;
     SpriteRenderer icon;
     BoxCollider2D coll;
+    AudioManager audioManager;
     public LayerMask groundLayer;
     enum MovementState { idle, running, jump, fall, attack}
     void Start()
     {
+           audioManager=FindObjectOfType<AudioManager>();
            rb= GetComponent<Rigidbody2D>();
            anim= rb.GetComponent<Animator>();
            icon= rb.GetComponent<SpriteRenderer>();  //To flip while going left
@@ -46,6 +48,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if ((Input.GetKeyDown(KeyCode.W)||(Input.GetKeyDown(KeyCode.UpArrow))) && IsGrounded())
         {
+            audioManager.JumpSound();
             /*rb.velocity = Vector2.up * jumpForce;*/
             rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
 
@@ -95,6 +98,7 @@ public class PlayerMovement : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Space))
         {
             state= MovementState.attack;
+            audioManager.swordHit();
         }
         anim.SetInteger("state",(int)state);
     }

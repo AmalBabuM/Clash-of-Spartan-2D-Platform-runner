@@ -5,8 +5,11 @@ using UnityEngine;
 public class EnemyDeath : MonoBehaviour
 {
     Animator anim;
+
+    AudioManager audioManager;
     void Start()
     {
+        audioManager=FindObjectOfType<AudioManager>();
         anim= GetComponentInParent<Animator>();
     }
 
@@ -14,6 +17,7 @@ public class EnemyDeath : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player" && Input.GetKey(KeyCode.Space))
         {
+            audioManager.EnemyDeathSound();
             /* Debug.Log("GHHHH");*/
             anim.SetTrigger("die");
         }
