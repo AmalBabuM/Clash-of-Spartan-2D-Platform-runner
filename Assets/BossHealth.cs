@@ -7,14 +7,11 @@ public class BossHealth : MonoBehaviour
 {
     public Slider slider;
 
-    public Vector3 offset;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    
 
-    // Update is called once per frame
+    public Vector3 offset;
+    
+   
     void Update()
     {
         slider.transform.position = Camera.main.WorldToScreenPoint(transform.parent.position + offset);
