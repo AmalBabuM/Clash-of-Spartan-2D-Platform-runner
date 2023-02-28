@@ -21,7 +21,7 @@ public class Player : MonoBehaviour
         /*healthBar=FindObjectOfType<HealthBar>();*/
     }
 
-    private void Update()
+   /* private void Update()
     {
         if(Input.GetKeyDown(KeyCode.H))
 
@@ -36,7 +36,7 @@ public class Player : MonoBehaviour
         {
             LoadPlayer();
         }
-    }
+    }*/
 
     public void ScoreUpdate(int value) //This is where the score is updated
     {
